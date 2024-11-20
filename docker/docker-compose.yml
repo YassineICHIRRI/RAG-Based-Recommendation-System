@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+
+  mongodb:
+
+    image: mongo
+
+    container_name: rag-mongo
+
+    ports:
+      - "27017:27017"
+
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${USER_NAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${PASSWORD}
+
+    volumes:
+      - mongodbdata:/data/db
+
+
+volumes:
+  mongodbdata:
