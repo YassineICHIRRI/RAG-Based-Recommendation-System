@@ -4,9 +4,15 @@ from ..items import NewsItem
 # Creating the Spider logic for scrapping Almassa
 class NewsSpider(scrapy.Spider):
     name = "news" 
-    start_urls = ['https://almassaa.com/%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%B9%D9%84%D9%8A%D8%A7-%D9%84%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D8%A8%D8%A3%D9%83%D8%A7/']
+    start_urls = ['https://almassaa.com/']
 
     def parse(self, response):
+        news_url = response.css('.qma-linke::attr(href)').getall()
+        for url in news_url:
+            yield response.follow(url, callback = self.parse_news)
+        
+        
+    def parse_news(self, response):
         items = NewsItem()
         self.log(f'Got response from {response.url}')
         
