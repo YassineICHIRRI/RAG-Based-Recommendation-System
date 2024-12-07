@@ -16,12 +16,12 @@ class NewsSpider(scrapy.Spider):
         items = NewsItem()
         self.log(f'Got response from {response.url}')
         
-        title = response.css('.post-title::text').get(),
+        title = response.css('.post-title::text').get()
         url = response.css('link[rel="canonical"]::attr(href)').get()
-        date =  response.css('.post-date span::text').get(),
-        category = response.css('.item-cat a::text').get(),
-        thumbnail =  response.css('.featured-area ::attr(src)').get(),
-        content =  response.css('.entry-content p::text').getall(),
+        date =  response.css('.post-date span::text').get()
+        category = response.css('.item-cat a::text').get()
+        thumbnail =  response.css('.featured-area ::attr(src)').get()
+        content =  response.css('.entry-content p::text').getall()
         
         items['title'] = title
         items['url'] = url
