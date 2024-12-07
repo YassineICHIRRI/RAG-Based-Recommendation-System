@@ -1,4 +1,4 @@
-from src.mongodb import NewsClient
+from src_old.mongodb import NewsClient
 
 
 
