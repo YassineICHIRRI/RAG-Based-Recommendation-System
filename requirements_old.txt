@@ -1,0 +1,6 @@
+pymongo
+pydantic
+pydantic-settings
+python-dotenv
+scrapy
+pywin32
