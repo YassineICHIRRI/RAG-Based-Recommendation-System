@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings
 
-from src import configs
+from src_old import configs
 
 class Settings(BaseSettings):
     user_name: str 

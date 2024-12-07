@@ -1,1 +1,3 @@
-from . import configs, mongodb
+from pathlib import Path
+
+base_dir = Path(__file__).parent.parent
