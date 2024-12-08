@@ -1,2 +1,6 @@
 fastapi==0.115.6
 fastapi[standard]
+langchain
+chromadb
+langchain_huggingface
+langchain_community
