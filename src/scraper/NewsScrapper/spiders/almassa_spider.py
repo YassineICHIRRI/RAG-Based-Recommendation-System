@@ -1,5 +1,5 @@
 import scrapy
-from ..items import NewsItem
+from NewsScrapper.items import NewsItem
 
 # Creating the Spider logic for scrapping Almassa
 class NewsSpider(scrapy.Spider):
